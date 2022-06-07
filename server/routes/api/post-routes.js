@@ -4,7 +4,7 @@ const {
   createPosts,
   // getPosts,
   // createPost,
-} = require('../../controllers/matchup-controller');
+} = require('../../controllers/post-controller');
 
 router.route('/').get(getAllPosts);
 router.route('/').post(createPosts);

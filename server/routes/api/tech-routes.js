@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const { getAllTech } = require('../../controllers/tech-controller');
+const { getAllUser } = require('../../controllers/user-controller');
 
-router.route('/').get(getAllTech);
+router.route('/').get(getAllUser);
 
 module.exports = router;

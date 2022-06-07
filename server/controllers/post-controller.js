@@ -10,19 +10,6 @@ module.exports = {
 
     res.status(200).json(post);
   },
-  async createPost(req, res) {
-    const post = await Post.findOneAndUpdate(
-      { _id: req.body.id },
-      { $inc: { [`tech${req.body.techNum}_votes`]: 1 } },
-      { new: true }
-    );
-
-    if (!post) {
-      return res.status(400).json({ message: 'Unable to post' });
-    }
-
-    res.status(200).json(vote);
-  },
   async getAllPosts(req, res) {
     const allPosts = await Post.find({});
 
@@ -39,6 +26,15 @@ module.exports = {
       return res.status(400).json({ message: 'No post found by that id' });
     }
 
-    res.status(200).json(matchup);
+    res.status(200).json(post);
   },
+  async deletePost({ params }, res) {
+    const post = await Post.deleteOne({ _id: params.id });
+
+    if (!post) {
+      return res.status(400).json({ message: 'No post found by that id' });
+    }
+
+    res.status(200).json(post);
+  }
 };

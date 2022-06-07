@@ -6,7 +6,7 @@ const techData = require('./techData.json');
 db.once('open', async () => {
   await Tech.deleteMany({});
 
-  const technologies = await Tech.insertMany(techData);
+  const technologies = await Tech.insertMany(userData);
 
   console.log('Technologies seeded!');
   process.exit(0);

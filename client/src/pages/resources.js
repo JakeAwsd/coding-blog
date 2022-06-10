@@ -9,6 +9,25 @@ export default class ResourcePage extends React.Component {
           <article className="article">
               <h1 className="article-title">Coding Resources</h1>
               <div className="article-body"></div>
+
+              {/* sites to help with coding errors, etc */}
+              <p>
+                Stack Overflow- Question and Answer Website for Professional and Enthusiast Programmers!
+              </p>
+              <Button href="#">https://stackoverflow.com/</Button> <Button type="submit">View More</Button>{' '}
+              <p>
+                MDN Web Docs- Documentation Repository and Learning Resource for Web Developers.
+              </p>
+              <Button href="#">https://mdn.dev/</Button> <Button type="submit">View More</Button>{' '}
+              <p>
+                Code Project- Community for Computer Programmers w/ Articles on Different Topics and Programming Languages.
+              </p>
+              <Button href="#">https://www.codeproject.com/</Button> <Button type="submit">View More</Button>{' '}
+              <p>
+                Code Ranch- Discussions on Java, Databases, Programmer Certification, Programming Jobs and More.
+              </p>
+              <Button href="#">https://coderanch.com/</Button> <Button type="submit">View More</Button>{' '}
+
               {/* resource pages to help w/ coding */}
               <p>
                 CodeAcademy- Online Interactive Platform offering Free Coding Classes
@@ -35,18 +54,7 @@ export default class ResourcePage extends React.Component {
                 FontSpace- 93,000+ Free Fonts
               </p>
               <Button href="#">fontspace.com</Button> <Button type="submit">View More</Button>{' '}
-              {/* sites to help with coding errors, etc */}
-              <p>
-                Stack Overflow- Question and Answer Website for Professional and Enthusiast Programmers!
-              </p>
-              <Button href="#">https://stackoverflow.com/</Button> <Button type="submit">View More</Button>{' '}
-              <p>
-                MDN Web Docs- Documentation Repository and Learning Resource for Web Developers
-              </p>
-              <Button href="#">https://mdn.dev/</Button> <Button type="submit">View More</Button>{' '}
-
-
-            
+              
               </article>
           </div>
 

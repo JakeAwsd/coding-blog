@@ -6,6 +6,12 @@
   margin-top: 20px;
   text-align: center;
   border: 15px;
+  margin-right: auto;
+	margin-left: auto;
+	padding-right: 15px;
+	padding-left: 15px;
+	min-height: 100vh;
+	background-color: black;
 }
 
 .comments-title {
@@ -19,6 +25,8 @@
   border: 15px;
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
+  background-color: black;
+  
 }
 
 .comment-form-title {
@@ -31,7 +39,7 @@
   margin-bottom: 8px;
   margin-top: 8px;
   border: 1px solid rgb(107, 114, 12);
-  background-color: white;
+  background-color: #00a7e1;
 }
 
 .comment-form-button {
@@ -59,6 +67,18 @@
 .comment {
   display: flex;
   margin-bottom: 28px;
+  align-items: center;
+  background-image: linear-gradient(#003459,#00a7e1);
+width: 300px;
+border-radius: 50px;
+border: 5px solid rgb(0, 0, 0);
+
+padding: 50px;
+margin: 0px;
+text-align: center;
+display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .comment-image-container {
@@ -81,6 +101,7 @@
   margin-right: 8px;
   font-size: 20px;
   color: rgb(81, 0, 255);
+  text-align: center;
 }
 
 .comment-text {
@@ -107,4 +128,6 @@
 .replies {
   margin-top: 20px;
   text-align: center;
+  
+
 }

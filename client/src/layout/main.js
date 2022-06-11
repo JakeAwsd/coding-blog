@@ -3,7 +3,7 @@ import {Switch, Route, Redirect} from 'react-router-dom';
 
 import BlogPage from '../pages/blog';
 import PicturePage from '../pages/picture';
-import VideoPage from '../pages/video';
+import VideoPage from '../pages/resources';
 import HelloWorld from '../pages/helloworld';
 
 export default class Main extends React.Component {
@@ -14,7 +14,7 @@ export default class Main extends React.Component {
             <Redirect from='/blog' to='/'/>
             <Route exact path="/" component={BlogPage} />
             <Route path="/picture" component={PicturePage} />
-            <Route path="/video" component={VideoPage} />
+            <Route path="/resources" component={VideoPage} />
             <Route path="/helloworld" component={HelloWorld}/>
           </Switch>
         </main>

@@ -1,10 +1,10 @@
 import React from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom';
 
-import BlogPage from '../pages/blog';
-import PicturePage from '../pages/picture';
-import VideoPage from '../pages/resources';
-import HelloWorld from '../pages/helloworld';
+import BlogPage from '../../pages/blog';
+import PicturePage from '../../pages/picture';
+import VideoPage from '../../pages/video';
+import HelloWorld from '../../pages/helloworld';
 
 export default class Main extends React.Component {
   render() {

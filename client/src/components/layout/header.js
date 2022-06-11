@@ -10,8 +10,8 @@ export default class Header extends React.Component {
           <nav className="top-menu">
             <ul>
               <li><Link to='/'>Home</Link></li>
-              <li><Link to="/picture">Picture</Link></li>
-              <li><Link to="/video">Video</Link></li>
+              <li><Link to="/picture">Discussion Forum </Link></li>
+              <li><Link to="/resources">resources</Link></li>
               <li><Link to="/helloworld">Hello World</Link></li>
             </ul>
           </nav>

@@ -14,7 +14,7 @@ export default class Main extends React.Component {
             <Redirect from='/blog' to='/'/>
             <Route exact path="/" component={BlogPage} />
             <Route path="/picture" component={PicturePage} />
-            <Route path="/video" component={VideoPage} />
+            <Route path="/resources" component={VideoPage} />
             <Route path="/helloworld" component={HelloWorld}/>
           </Switch>
         </main>

@@ -1,5 +1,9 @@
 import React from 'react';
 import CommentBox from '../components/comments/comment-box';
+import { Button} from 'react-bootstrap';
+
+
+
 
 export default class ResourcePage extends React.Component {
   render() {

@@ -1,5 +1,4 @@
 body {
-	background-color: black;
 
 	margin: 0;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
@@ -18,6 +17,7 @@ code {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	color: white;
 }
 
 .dark-mode {
@@ -69,7 +69,7 @@ textarea:focus {
 }
 
 .save:hover {
-	background-color: #ededed;
+	background-color: #1f5fde;
 	cursor: pointer;
 }
 

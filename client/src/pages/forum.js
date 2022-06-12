@@ -1,4 +1,4 @@
-import Comments from "../components/comments/Comments";
+import Comments from "../comments/Comments";
 
 const PicturePage = () => {
   return (

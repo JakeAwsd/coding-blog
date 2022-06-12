@@ -10,27 +10,34 @@ const App = () => {
 	const [notes, setNotes] = useState([
 		{
 			id: nanoid(),
-			text: 'This is my first note!',
-			date: '15/04/2021',
+			title:'random',
+			text: 'Blogging',
+			date: '11/06/2022',
 		},
 		{
 			id: nanoid(),
-			text: 'This is my second note!',
+			title:'random',
+
+			text: 'Hello',
 			date: '21/04/2021',
 		},
 		{
 			id: nanoid(),
-			text: 'This is my third note!',
-			date: '28/04/2021',
+			title:'random',
+
+			text: 'this is it',
+			date: '11/06/2022',
 		},
 		{
 			id: nanoid(),
-			text: 'This is my new note!',
-			date: '30/04/2021',
+			title:'random',
+
+			text: 'hmmm',
+			date: '06/11/2022',
 		},
 	]);
 
-	const [searchText, setSearchText] = useState('');
+	const [searchTitle, setSearchTitle] = useState('');
 
 	const [darkMode, setDarkMode] = useState(false);
 
@@ -51,10 +58,11 @@ const App = () => {
 		);
 	}, [notes]);
 
-	const addNote = (text) => {
+	const addNote = (title,text) => {
 		const date = new Date();
 		const newNote = {
 			id: nanoid(),
+			title: title,
 			text: text,
 			date: date.toLocaleDateString(),
 		};
@@ -71,10 +79,10 @@ const App = () => {
 		<div className={`${darkMode && 'dark-mode'}`}>
 			<div className='container'>
 				<Header handleToggleDarkMode={setDarkMode} />
-				<Search handleSearchNote={setSearchText} />
+				<Search handleSearchNote={setSearchTitle} />
 				<NotesList
 					notes={notes.filter((note) =>
-						note.text.toLowerCase().includes(searchText)
+						note.text.toLowerCase().includes(searchTitle)
 					)}
 					handleAddNote={addNote}
 					handleDeleteNote={deleteNote}

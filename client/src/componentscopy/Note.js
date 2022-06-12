@@ -1,9 +1,10 @@
 import { MdDeleteForever } from 'react-icons/md';
 import './App.css';
 
-const Note = ({ id, text, date, handleDeleteNote }) => {
+const Note = ({ id,title, text, date, handleDeleteNote }) => {
 	return (
 		<div className='note'>
+			<span>{title}</span>
 			<span>{text}</span>
 			<div className='note-footer'>
 				<small>{date}</small>

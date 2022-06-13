@@ -1,55 +1,30 @@
 import { useState } from 'react';
-import './App.css';
+import { MdBookmark } from 'react-icons/md';
 
 
 const AddNote = ({ handleAddNote }) => {
-	const [noteTitle, setNoteTitle] = useState('');
 	const [noteText, setNoteText] = useState('');
-	const characterLimit = 1000;
-
-	const handleTitle = (event) => {
-		if (characterLimit - event.target.value.length >= 0) {
-			setNoteTitle(event.target.value);
-		}
-	
-	};
+	const characterLimit = 200;
 
 	const handleChange = (event) => {
 		if (characterLimit - event.target.value.length >= 0) {
 			setNoteText(event.target.value);
 		}
-	
 	};
-
-
 
 	const handleSaveClick = () => {
-	
 		if (noteText.trim().length > 0) {
-			handleAddNote(noteTitle,noteText);
+			handleAddNote(noteText);
 			setNoteText('');
-			setNoteTitle('');
 		}
-	
 	};
-
 
 	return (
 		<div className='note new'>
-
-			
-            <textarea className='title'
-				rows='2'
-				cols='10'
-				placeholder='Type to add a Title'
-				value={noteTitle}
-				onChange={handleTitle}
-			></textarea>
-			
 			<textarea
 				rows='8'
 				cols='10'
-				placeholder='Start your blog '
+				placeholder='Type to add a note...'
 				value={noteText}
 				onChange={handleChange}
 			></textarea>
@@ -57,9 +32,17 @@ const AddNote = ({ handleAddNote }) => {
 				<small>
 					{characterLimit - noteText.length} Remaining
 				</small>
-				<button className='save' onClick={handleSaveClick}>
-					Save
+
+				<button className='MdBookmark' onClick={handleSaveClick}>
+				<MdBookmark
+					onClick={ handleSaveClick}
+					className='MdBookmark'
+					size='1.3em'
+				/>
 				</button>
+
+
+
 			</div>
 		</div>
 	);

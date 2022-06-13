@@ -1,6 +1,5 @@
-import Note from './Note';
+import Note from './Blog';
 import AddNote from './AddNote';
-import './App.css';
 
 const NotesList = ({
 	notes,
@@ -12,7 +11,6 @@ const NotesList = ({
 			{notes.map((note) => (
 				<Note
 					id={note.id}
-					title={note.title}
 					text={note.text}
 					date={note.date}
 					handleDeleteNote={handleDeleteNote}

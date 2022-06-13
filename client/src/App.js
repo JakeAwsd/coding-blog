@@ -1,103 +1,87 @@
-// Embedding Stylesheets In Your Main Component App
-// import './App.css';
+import { useState, useEffect } from 'react';
+import { nanoid } from 'nanoid';
+import NotesList from './components/NotesList';
+import Search from './components/Search';
+import Header from './components/Header';
+import Login from './components/Login';
 
-// import React, {Component} from 'react';
-// import Header from './layout/header';
-// import Main from './layout/main';
+const App = () => {
+	const [notes, setNotes] = useState([
+		{
+			id: nanoid(),
+			text: 'This is my first note!',
+			date: '15/04/2021',
+		},
+		{
+			id: nanoid(),
+			text: 'This is my second note!',
+			date: '21/04/2021',
+		},
+		{
+			id: nanoid(),
+			text: 'This is my third note!',
+			date: '28/04/2021',
+		},
+		{
+			id: nanoid(),
+			text: 'This is my new note!',
+			date: '30/04/2021',
+		},
+	]);
 
-// import { Router } from 'react-router';
-// import createHashHistory from 'history/createHashHistory';
+	const [searchText, setSearchText] = useState('');
 
-// const hashHistory = createHashHistory({ basename: process.env.PUBLIC_URL });
+	const [darkMode, setDarkMode] = useState(false);
 
-// class App extends Component {
-//   render() {
-//     return (
-//         <Router history={hashHistory}>
-//           <div className="App">
-//             <Header/>
-//             <Main/>
-//           </div>
-//         </Router>
-//     )
-//   }
-// }
+	useEffect(() => {
+		const savedNotes = JSON.parse(
+			localStorage.getItem('react-notes-app-data')
+		);
 
-// export default App
+		if (savedNotes) {
+			setNotes(savedNotes);
+		}
+	}, []);
 
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  createHttpLink,
-} from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
+	useEffect(() => {
+		localStorage.setItem(
+			'react-notes-app-data',
+			JSON.stringify(notes)
+		);
+	}, [notes]);
 
-// import Home from './pages/Home';
-// import Detail from './pages/Detail';
-// import NoMatch from './pages/NoMatch';
-// import Login from './pages/Login';
-import Signup from './pages/signup';
-// import helloworld from './pages/helloworld';
-import Blog from './pages/blog';
-import Login from './pages/login';
-import Picture from './pages/picture';
-import Resources from './pages/resources';
+	const addNote = (text) => {
+		const date = new Date();
+		const newNote = {
+			id: nanoid(),
+			text: text,
+			date: date.toLocaleDateString(),
+		};
+		const newNotes = [...notes, newNote];
+		setNotes(newNotes);
+	};
 
-const httpLink = createHttpLink({
-  uri: '/graphql',
-});
+	const deleteNote = (id) => {
+		const newNotes = notes.filter((note) => note.id !== id);
+		setNotes(newNotes);
+	};
 
-const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem('id_token');
-  return {
-    headers: {
-      ...headers,
-      authorization: token ? `Bearer ${token}` : '',
-    },
-  };
-});
+	return (
+		<div className={`${darkMode && 'dark-mode'}`}>
+			<div className='container'>
+				<Header handleToggleDarkMode={setDarkMode} />
+				<Login handleToggleDarkMode={setDarkMode} />
+				<Search handleSearchNote={setSearchText} />
+				<NotesList
+					notes={notes.filter((note) =>
+						note.text.toLowerCase().includes(searchText)
+					)}
+					handleAddNote={addNote}
+					handleDeleteNote={deleteNote}
+				/>
+			</div>
+		</div>
+	);
+};
 
-const client = new ApolloClient({
-  link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
-});
-
-function App() {
-  return (
-    <ApolloProvider client={client}>
-
-<Router>
-        <div>
-            <Routes>
-              <Route 
-                path="/" 
-                element={<Blog />} 
-              />
-              <Route 
-                path="/login" 
-                element={<Login />} 
-              />
-              <Route 
-                path="/signup" 
-                element={<Signup />} 
-              />
-              <Route 
-                path="/picture" 
-                element={<Picture />} 
-              />
-              <Route 
-                path="/resources" 
-                element={<Resources />} 
-              />
-            </Routes>
-        </div>
-      </Router>
-    </ApolloProvider>
-  );
-}
-
-export default App
-
+export default App;

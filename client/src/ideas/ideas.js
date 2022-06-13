@@ -9,10 +9,10 @@ export default class ResourcePage extends React.Component {
         <div className="cell">
           <article className="w3-container">
             <h1 className="article-title">
-            Feeling stuck in a creative dead zone? 
-            <h2 className="article-title">Here are 5 projects ideas
-              you can try. </h2>
+            Feeling Stuck in a Creative Dead Zone? 
             </h1>
+            <h2 className="article-title">Here are 5 project idea's
+              you can try. </h2>
             
             <div className="article-body"></div>
 

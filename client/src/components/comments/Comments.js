@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import CommentForm from "./CommentForm";
-import Comment from "./Comment";
+import Comment from "./comment";
 import './Comments.css';
 import {
   getComments as getCommentsApi,

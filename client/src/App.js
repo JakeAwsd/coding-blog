@@ -39,12 +39,12 @@ import { setContext } from '@apollo/client/link/context';
 // import Detail from './pages/Detail';
 // import NoMatch from './pages/NoMatch';
 // import Login from './pages/Login';
-import Signup from './pages/Signup';
-import helloworld from './pages/helloworld';
-import Blog from './pages/Blog';
-import Login from './pages/Login';
-import Picture from './pages/Picture';
-import Resources from './pages/Resources';
+import Signup from './pages/signup';
+// import helloworld from './pages/helloworld';
+import Blog from './pages/blog';
+import Login from './pages/login';
+import Picture from './pages/picture';
+import Resources from './pages/resources';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -71,8 +71,6 @@ function App() {
 
 <Router>
         <div>
-
-
             <Routes>
               <Route 
                 path="/" 
@@ -94,9 +92,7 @@ function App() {
                 path="/resources" 
                 element={<Resources />} 
               />
-
             </Routes>
-
         </div>
       </Router>
     </ApolloProvider>

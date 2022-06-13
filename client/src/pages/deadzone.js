@@ -1,10 +1,10 @@
 import React from 'react';
-import HelloWorldList from '../components/helloworld/hello-world-list';
+import Hello from '../ideas/ideas';
 
 export default class HelloWorld extends React.Component {
   render() {
     return (<div className="HelloWorld">
-      <HelloWorldList />
+      <Hello />
     </div>);
   }
 }

@@ -19,7 +19,7 @@ const CommentForm = ({
   return (
     <form onSubmit={onSubmit}>
       <textarea 
-        placeholder="Type yur question.."
+        placeholder="Type your question.."
         className="comment-form-textarea"
         value={text}
         onChange={(e) => setText(e.target.value)}

@@ -1,7 +1,7 @@
-import React from "react";
-
+import React from 'react';
+import CommentBox from '../../src/components/comments/CommentForm';
+import { Button} from 'react-bootstrap';
 import "./resources.css";
-
 export default class ResourcePage extends React.Component {
   render() {
     return (
@@ -22,7 +22,7 @@ export default class ResourcePage extends React.Component {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <button className="btn">view More</button>
+                  <button className="btn">View More</button>
                 </a>
               </p>
             </div>
@@ -34,7 +34,7 @@ export default class ResourcePage extends React.Component {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <button className="btn">view More</button>
+                  <button className="btn">View More</button>
                 </a>
             </p>
 
@@ -47,7 +47,7 @@ export default class ResourcePage extends React.Component {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <button className="btn">view More</button>
+                  <button className="btn">View More</button>
                 </a>
 
 
@@ -61,7 +61,7 @@ export default class ResourcePage extends React.Component {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <button className="btn">view More</button>
+                  <button className="btn">View More</button>
                 </a>
             </p>
 
@@ -75,7 +75,7 @@ export default class ResourcePage extends React.Component {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <button className="btn">view More</button>
+                  <button className="btn">View More</button>
                 </a>
             </p>
             <p>
@@ -87,7 +87,7 @@ export default class ResourcePage extends React.Component {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <button className="btn">view More</button>
+                  <button className="btn">View More</button>
                 </a>
             </p>
             <p>
@@ -98,7 +98,7 @@ export default class ResourcePage extends React.Component {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <button className="btn">view More</button>
+                  <button className="btn">View More</button>
                 </a>
             </p>
             {/* front end websites to help design your page */}
@@ -110,7 +110,7 @@ export default class ResourcePage extends React.Component {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <button className="btn">view More</button>
+                  <button className="btn">View More</button>
                 </a>
             </p>
             <p>
@@ -121,7 +121,7 @@ export default class ResourcePage extends React.Component {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <button className="btn">view More</button>
+                  <button className="btn">View More</button>
                 </a>
             </p>
             <p>
@@ -132,7 +132,7 @@ export default class ResourcePage extends React.Component {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <button className="btn">view More</button>
+                  <button className="btn">View More</button>
                 </a>
             </p>
           </article>
